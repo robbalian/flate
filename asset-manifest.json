@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/onecoin/static/css/main.879c0140.chunk.css",
-    "main.js": "/onecoin/static/js/main.f978b8aa.chunk.js",
-    "main.js.map": "/onecoin/static/js/main.f978b8aa.chunk.js.map",
+    "main.css": "/onecoin/static/css/main.57b1c620.chunk.css",
+    "main.js": "/onecoin/static/js/main.ea13a635.chunk.js",
+    "main.js.map": "/onecoin/static/js/main.ea13a635.chunk.js.map",
     "runtime-main.js": "/onecoin/static/js/runtime-main.305f8914.js",
     "runtime-main.js.map": "/onecoin/static/js/runtime-main.305f8914.js.map",
-    "static/js/2.c1177539.chunk.js": "/onecoin/static/js/2.c1177539.chunk.js",
-    "static/js/2.c1177539.chunk.js.map": "/onecoin/static/js/2.c1177539.chunk.js.map",
+    "static/js/2.66d94cef.chunk.js": "/onecoin/static/js/2.66d94cef.chunk.js",
+    "static/js/2.66d94cef.chunk.js.map": "/onecoin/static/js/2.66d94cef.chunk.js.map",
     "static/js/3.3adbe528.chunk.js": "/onecoin/static/js/3.3adbe528.chunk.js",
     "static/js/3.3adbe528.chunk.js.map": "/onecoin/static/js/3.3adbe528.chunk.js.map",
     "index.html": "/onecoin/index.html",
-    "static/css/main.879c0140.chunk.css.map": "/onecoin/static/css/main.879c0140.chunk.css.map",
-    "static/js/2.c1177539.chunk.js.LICENSE.txt": "/onecoin/static/js/2.c1177539.chunk.js.LICENSE.txt",
+    "static/css/main.57b1c620.chunk.css.map": "/onecoin/static/css/main.57b1c620.chunk.css.map",
+    "static/js/2.66d94cef.chunk.js.LICENSE.txt": "/onecoin/static/js/2.66d94cef.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/onecoin/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.305f8914.js",
-    "static/js/2.c1177539.chunk.js",
-    "static/css/main.879c0140.chunk.css",
-    "static/js/main.f978b8aa.chunk.js"
+    "static/js/2.66d94cef.chunk.js",
+    "static/css/main.57b1c620.chunk.css",
+    "static/js/main.ea13a635.chunk.js"
   ]
 }
