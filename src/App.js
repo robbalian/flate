@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from '/flatecoin.png';
 import './App.css';
 //import useWeb3Modal from './hooks/useWeb3Modal.js';
 import Web3Modal from 'web3modal';
@@ -66,22 +66,24 @@ async function getWeb3Modal() {
 
     if (!rpcProvider) connectProvider();
     if (!signedProvider && web3Modal && cachedSignerExists()) {
-      connectSigner();
+      //connectSigner();
     }
+
+    if (tokenContract) getTokenInfo();
 
     if (rpcProvider) {
       getContract(rpcProvider);
       getPublicBalances();
       if (signedProvider) {
-        getUserBalances();
-        getTokenInfo();
+        //getUserBalances();
       }
     }
   }, [rpcProvider, tokenContract, signedProvider]);
 
   async function connectProvider() {
     console.log("connecting to rpcProvider");
-    let ethersProvider = new ethers.providers.JsonRpcProvider('https://data-seed-prebsc-1-s1.binance.org:8545/');
+    let ethersProvider = new ethers.providers.JsonRpcProvider("http://localhost:8545");//'https://bsc-dataseed.binance.org/');
+    //let ethersProvider = ethers.getDefaultProvider();
     setRpcProvider(ethersProvider);
   }
 
@@ -115,7 +117,7 @@ async function getWeb3Modal() {
   }
 
   function formatEth(bn) {
-    return parseFloat(ethers.utils.formatUnits(bn).toString()).toFixed(4);
+    return parseFloat(ethers.utils.formatUnits(bn).toString()).toLocaleString('en-US',{minimumFractionDigits:4,maximumFractionDigits:6});
   }
 
   async function mint(num) {
@@ -143,25 +145,24 @@ async function getWeb3Modal() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={process.env.PUBLIC_URL + '/flatecoin.png'} className="App-logo" alt="logo" />
+        <h1 className='text-gradient'>Welcome to Inflation Coin</h1>
         <p>
-          Total Supply: {data.totalSupply != null ? formatEth(data.totalSupply) : 'loading'} OneCoin
+          Inflation Coin is an experiment. We start with a single coin in circulation, and every day each coins splits into 2!
         </p>
+        
         <p>
-          OneCoin Treasury Balance: {data.oneCoinTreasuryBalance != null ? formatEth(data.oneCoinTreasuryBalance) : 'loading'} ETH
+          Total Supply: {data.totalSupply != null ? formatEth(data.totalSupply) : 'loading'} FLATE
         </p>
-        <p>
-          My Balances: <p />
-          Someone's eth balance: {data.ethBalance != null ? formatEth(data.ethBalance) : 'loading'} ETH<p />
-          {data.myEthBalance != null ? formatEth(data.myEthBalance) : 'loading'} ETH<p />
-          {data.myONEBalance != null ? formatEth(data.myONEBalance) : 'loading'} ONE
-        </p>
-        <button
-          className='btn-gradient-border btn'
-          onClick ={!signedProvider ? connectSigner : disconnectSigner} >
-        {!signedProvider ? 'Connect' : 'Disconnect' }
+        <button className="btn btn-gradient-border"
+          onClick={(e) => window.open('https://poocoin.app/tokens/'+tokenJSON.address, '_blank')} > 
+          See the Price
         </button>
-        {mintButton()}
+        <button 
+          className="btn btn-gradient-border"
+          onClick={(e) => window.open('https://pancakeswap.finance/swap?outputCurrency='+tokenJSON.address, '_blank')}>
+            Invest in ONE
+        </button>
         
       </header>
     </div>

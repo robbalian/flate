@@ -1,6 +1,6 @@
 {
-  "homepage": "http://robbalian.github.io/onecoin",
-  "name": "onecoin",
+  "homepage": "http://robbalian.github.io/flate",
+  "name": "InflationCoin",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
